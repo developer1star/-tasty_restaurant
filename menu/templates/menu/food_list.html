@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🍽️ Tasty Restaurant Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .menu-container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff6b6b;
+            margin-bottom: 30px;
+        }
+
+        .dish-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 10px;
+            border-bottom: 1px solid #ddd;
+            transition: background 0.2s;
+        }
+
+        .dish-item:last-child {
+            border-bottom: none;
+        }
+
+        .dish-item:hover {
+            background: #f9f9f9;
+        }
+
+        .dish-name {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .dish-description {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .dish-price {
+            font-weight: bold;
+            color: #2d7a2d;
+            font-size: 16px;
+        }
+
+        .no-dishes {
+            text-align: center;
+            font-size: 16px;
+            color: #999;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <h1>🍽️ Tasty Restaurant Menu</h1>
+
+        {% if dishes %}
+            {% for dish in dishes %}
+                <div class="dish-item">
+                    <div>
+                        <div class="dish-name">{{ dish.name }}</div>
+                        <div class="dish-description">{{ dish.description }}</div>
+                    </div>
+                    <div class="dish-price">${{ dish.price }}</div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="no-dishes">No dishes available.</div>
+        {% endif %}
+
+    </div>
+</body>
+</html>
