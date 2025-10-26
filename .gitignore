@@ -1,0 +1,36 @@
+
+# Django / Python
+__pycache__/
+*.py[cod]
+*.so
+*.log
+
+# Virtual environments
+venv/
+env/
+
+# Django generated files
+db.sqlite3
+/media/
+staticfiles/
+static/
+
+# Environments & secrets
+.env
+*.env
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+
+# Tests and coverage
+htmlcov/
+.tox/
+.coverage
+.pytest_cache/
+
+# Migrations (Optional — track carefully)
+!*/migrations/__init__.py
